@@ -35,7 +35,7 @@ else() # BUILD_MERGED_LIBS == ON
     endif()
 endif()
 if(ENV_TYPE STREQUAL "SGXSDK")
-    # Don't build GRPC by default for OCCLUM and VMTEE
+    # Don't build GRPC by default for OCCLUM and TEEOS
     add_subdirectory(grpc)
 endif()
 

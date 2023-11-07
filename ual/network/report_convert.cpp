@@ -84,6 +84,13 @@ TeeErrorCode ReportConvert::KunpengBgcheckToPassPortReport(
   return TEE_SUCCESS;
 }
 
+TeeErrorCode ReportConvert::PhytiumBgcheckToPassPortReport(
+    kubetee::UnifiedAttestationReport* report) {
+  TEE_LOG_DEBUG("Phytium TEE platform report convert, do nothing");
+  report->set_str_report_type(kUaReportTypePassport);
+  return TEE_SUCCESS;
+}
+
 TeeErrorCode ReportConvert::BgcheckToPassport(
     kubetee::UnifiedAttestationReport* report) {
   // Copy the orignal data from input_report
@@ -107,6 +114,8 @@ TeeErrorCode ReportConvert::BgcheckToPassport(
     TEE_CHECK_RETURN(CsvBgcheckToPassPortReport(report));
   } else if (platform == kUaPlatformKunpeng) {
     TEE_CHECK_RETURN(KunpengBgcheckToPassPortReport(report));
+  } else if (platform == kUaPlatformPhytium) {
+    TEE_CHECK_RETURN(PhytiumBgcheckToPassPortReport(report));
   } else {
     TEE_LOG_ERROR("TEE platform [%s] is not support", platform.c_str());
     return TEE_ERROR_CONVERT_REPORT_PLATFORM_UNSUPPORT;

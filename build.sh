@@ -96,7 +96,7 @@ do_compile() {
     # But for occlum, we deal with it like normal no-tee envrionment.
     [ "$OPT_TEE_TYPE" == "NONE" ] && has_tee="OFF"
     [ "$OPT_ENV_TYPE" == "OCCLUM" ] && has_tee="OFF"
-    [ "$OPT_ENV_TYPE" == "VMTEE" ] && has_tee="OFF"
+    [ "$OPT_ENV_TYPE" == "TEEOS" ] && has_tee="OFF"
 
     # Need to prepare the occlum dependencies
     if [ "$OPT_ENV_TYPE" == "OCCLUM" ] ; then

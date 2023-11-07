@@ -89,7 +89,7 @@ For How to setup the PCCS, please refer to [Intel DCAP document](https://github.
 # Ubuntu build environment for Hygon CSV VM TEE
 ./dockerenv.sh --init --ubuntu --csv
 ./dockerenv.sh --exec --ubuntu --csv
-./build.sh --with-samples --envtype VMTEE --teetype CSV
+./build.sh --with-samples --envtype TEEOS --teetype CSV
 ```
 
 ## Run the sample code

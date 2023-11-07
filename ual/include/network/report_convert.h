@@ -37,6 +37,8 @@ class ReportConvert {
       kubetee::UnifiedAttestationReport* report);
   static TeeErrorCode KunpengBgcheckToPassPortReport(
       kubetee::UnifiedAttestationReport* report);
+  static TeeErrorCode PhytiumBgcheckToPassPortReport(
+      kubetee::UnifiedAttestationReport* report);
 };
 
 }  // namespace attestation

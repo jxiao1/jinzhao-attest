@@ -21,6 +21,7 @@ extern const char kUaPlatformSgxDcap[];
 extern const char kUaPlatformHyperEnclave[];
 extern const char kUaPlatformCsv[];
 extern const char kUaPlatformKunpeng[];
+extern const char kUaPlatformPhytium[];
 
 // Unified attestation report type names
 extern const char kUaReportTypeBgcheck[];
@@ -50,7 +51,7 @@ extern const int kUaReportSizeBgcheck;
 extern const int kUaReportSizePassport;
 extern const int kUaReportSizeUas;
 
-// when generation ra report for occlum/VMTEE, Eid is not used
+// when generation ra report for occlum/TEEOS, Eid is not used
 // But the interfaces need a eid, so define this dummy one
 extern const char kDummyTeeIdentity[];
 

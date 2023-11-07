@@ -186,6 +186,11 @@ message KunpengReport {
   int64 int64_version = 2 [json_name = "int64_version"];
 }
 
+/// UnifiedAttestationReport::json_report for Phytium Trustzone
+message PhytiumReport {
+  string b64_quote = 1 [json_name = "b64_quote"];
+}
+
 /// UnifiedAttestationReport::json_report for Hygon CSV
 message HygonCsvReport {
   // For BackgroundCheck type report: Only quote in the report

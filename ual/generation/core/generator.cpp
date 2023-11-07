@@ -21,6 +21,9 @@
 #ifdef TEE_TYPE_CSV
 #include "generation/platforms/csv/generator_csv.h"
 #endif
+#ifdef TEE_TYPE_PHYTIUM
+#include "generation/platforms/phytium/generator_phytium.h"
+#endif
 
 namespace kubetee {
 namespace attestation {
@@ -58,6 +61,8 @@ TeeErrorCode AttestationGenerator::Initialize(const std::string& tee_identity) {
   } else {
 #ifdef TEE_TYPE_CSV
     TEE_LOG_DEBUG("Hygon CSV TEE platform");
+#elif defined(TEE_TYPE_PHYTIUM)
+    TEE_LOG_DEBUG("Phytium TEE platform");
 #else
 #ifndef SGX_MODE_SIM
     TEE_LOG_ERROR("Unsupported trusted execution environment");
@@ -74,6 +79,9 @@ TeeErrorCode AttestationGenerator::Initialize(const std::string& tee_identity) {
 #endif
 #ifdef TEE_TYPE_SGX1
   inner_ = std::make_shared<AttestationGeneratorSgxEpid>();
+#endif
+#ifdef TEE_TYPE_PHYTIUM
+  inner_ = std::make_shared<AttestationGeneratorPhytium>();
 #endif
 #ifdef TEE_TYPE_CSV
   inner_ = std::make_shared<AttestationGeneratorCsv>();

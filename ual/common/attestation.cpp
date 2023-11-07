@@ -15,6 +15,7 @@ const char kUaPlatformSgxEpid[] = "SGX_EPID";
 const char kUaPlatformSgxDcap[] = "SGX_DCAP";
 const char kUaPlatformHyperEnclave[] = "HyperEnclave";
 const char kUaPlatformCsv[] = "CSV";
+const char kUaPlatformPhytium[] = "Phytium";
 const char kUaPlatformKunpeng[] = "Kunpeng";
 
 const char kUaReportTypeBgcheck[] = "BackgroundCheck";
@@ -42,7 +43,7 @@ const int kUaReportSizeBgcheck = 8192;
 const int kUaReportSizePassport = 20480;
 const int kUaReportSizeUas = 8192;
 
-// when generation ra report for occlum/VMTEE, Eid is not used
+// when generation ra report for occlum/TEEOS, Eid is not used
 // But the interfaces need a eid, so define this dummy one
 const char kDummyTeeIdentity[] = "1234";
 

@@ -7,6 +7,7 @@
 #include "verification/platforms/csv/verifier_csv.h"
 #include "verification/platforms/hyperenclave/verifier_hyperenclave.h"
 #include "verification/platforms/kunpeng/verifier_kunpeng.h"
+#include "verification/platforms/phytium/verifier_phytium.h"
 #include "verification/platforms/sgx1/verifier_sgx_epid.h"
 #include "verification/platforms/sgx2/verifier_sgx_dcap.h"
 #include "verification/uas/verifier_uas.h"
@@ -31,6 +32,8 @@ TeeErrorCode AttestationVerifier::Initialize(
       inner_ = std::make_shared<AttestationVerifierCsv>();
     } else if (platform == kUaPlatformKunpeng) {
       inner_ = std::make_shared<AttestationVerifierKunpeng>();
+    } else if (platform == kUaPlatformPhytium) {
+      inner_ = std::make_shared<AttestationVerifierPhytium>();
     } else {
       ELOG_ERROR("Unsupported TEE platform: %s", platform.c_str());
       return TEE_ERROR_UNSUPPORTED_TEE;

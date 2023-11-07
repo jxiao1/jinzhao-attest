@@ -39,6 +39,8 @@ set(PLATFORM_SGX2_SRCS
 file(GLOB_RECURSE PLATFORM_CSV_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../platforms/csv/*.cpp)
 # Add the platform special files for Kunpeng
 file(GLOB_RECURSE PLATFORM_KUNPENG_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../platforms/kunpeng/*.cpp)
+# Add the platform special files for Phytium
+file(GLOB_RECURSE PLATFORM_PHYTIUM_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../platforms/phytium/*.cpp)
 set(PLATFORM_INCS
     ./
     ${PLATFORM_SRC_DIR_SGX2_QV}/dcap_quoteverify/inc/
@@ -65,6 +67,7 @@ set(T_SRCS
     ${PLATFORM_HYEN_SRCS}
     ${PLATFORM_CSV_SRCS}
     ${PLATFORM_KUNPENG_SRCS}
+    ${PLATFORM_PHYTIUM_SRCS}
     ${TRUSTED_SRCS}
 )
 
